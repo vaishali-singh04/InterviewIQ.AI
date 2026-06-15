@@ -86,6 +86,12 @@ export const generateQuestion = async (req, res) => {
   try {
     let { role, experience, mode, resumeText, projects, skills } = req.body
 
+console.log(req.body)
+
+role = role?.trim();
+experience = experience?.trim();
+mode = mode?.trim();
+
     role = role?.trim();
     experience = experience?.trim();
     mode = mode?.trim();
@@ -95,6 +101,9 @@ export const generateQuestion = async (req, res) => {
     }
 
     const user = await User.findById(req.userId)
+    console.log("USER =", user);
+    console.log("CREDITS =", user?.credits);
+
 
     if (!user) {
       return res.status(404).json({
@@ -102,7 +111,7 @@ export const generateQuestion = async (req, res) => {
       });
     }
 
-    if (user.credits < 50) {
+    if (user.credits < 0) {
       return res.status(400).json({
         message: "Not enough credits. Minimum 50 required."
       });
