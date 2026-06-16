@@ -16,6 +16,9 @@ function Auth({ isModel = false }) {
   const handleGoogleAuth = async () => {
     try {
       console.log("BUTTON CLICKED");
+      console.log(auth);
+      console.log(provider);
+      console.log(import.meta.env);
       const response = await signInWithPopup(auth, provider);
       console.log("FIREBASE RESPONSE=,response");
       let User = response.user;
