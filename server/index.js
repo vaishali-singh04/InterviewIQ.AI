@@ -2,6 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import connectDb from "./config/connectDb.js"
 import cookieParser from "cookie-parser"
+console.log("INDEX FILE LOADED")
 dotenv.config()
 import cors from "cors"
 import authRouter from "./routes/auth.route.js"

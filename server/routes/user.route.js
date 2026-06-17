@@ -1,7 +1,7 @@
 import express from "express"
 import isAuth from "../middlewares/isAuth.js"
 import { getCurrentUser } from "../controllers/user.controller.js"
-
+console.log("USER ROUTE LOADED")
 
 const userRouter = express.Router()
 
