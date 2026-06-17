@@ -206,8 +206,10 @@ Make questions based on the candidate’s role, experience,interviewMode, projec
       });
     }
 
-    user.credits  - 50;
+    user.credits = user.credits - 50;
+    console.log("BEFORE SAVE:",user.credits);
     await user.save();
+    console.log("AFTER SAVE:", user.credits)
 
     const interview = await Interview.create({
       userId: user._id,
