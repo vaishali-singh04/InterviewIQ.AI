@@ -113,7 +113,7 @@ console.log("USER ID =", user?._id);
       });
     }
 
-    if (user.credits < 0) {
+    if (user.credits < 50) {
       return res.status(400).json({
         message: "Not enough credits. Minimum 50 required."
       });
@@ -206,7 +206,7 @@ Make questions based on the candidate’s role, experience,interviewMode, projec
       });
     }
 
-    user.credits = 100;
+    user.credits  = -50;
     await user.save();
 
     const interview = await Interview.create({
