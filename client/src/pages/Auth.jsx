@@ -34,6 +34,9 @@ function Auth({ isModel = false }) {
       console.log("FULL ERROR =", error);
       console.log("ERROR CODE =", error.code);
       console.log("ERROR MESSAGE =", error.message);
+      console.log("RESPONSE =", error.response);
+console.log("DATA =", error.response?.data);
+console.log("STATUS =", error.response?.status);
 
       dispatch(setUserData(null));
     }
