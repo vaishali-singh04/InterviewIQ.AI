@@ -101,6 +101,8 @@ mode = mode?.trim();
     }
 
     const user = await User.findById(req.userId)
+    console.log("USER CREDITS =", user?.credits);
+console.log("USER ID =", user?._id);
     console.log("USER =", user);
     console.log("CREDITS =", user?.credits);
 
